@@ -1,0 +1,88 @@
+
+@import url('./menu.less');
+@import url('./tabs.less');
+
+body {
+  overflow: auto;
+}
+
+:global{
+
+  // collapsed
+  .ant-layout-root-sider .trigger {
+    padding: 0 16px;
+    cursor: pointer;
+    font-size: 18px;
+    line-height: 64px;
+    transition: color .3s;
+  }
+
+  .ant-layout-root-sider .trigger:hover {
+    color: #108ee9;
+  }
+
+  .ant-layout-root-sider .logo {
+    height: 64px;
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+
+  .ant-layout-root-sider .ant-layout-sider-collapsed .ant-menu-sider {
+    .anticon {
+      font-size: 16px;
+    }
+    .nav-text {
+      display: none;
+    }
+    &.ant-menu-inline .ant-menu-item {
+      &:after {
+        border-width: 2px;
+      }
+    }
+    .ant-menu-submenu-inline > .ant-menu-submenu-title:after {
+      right: 8px;
+    }
+    .ant-menu-submenu-inline {
+      .ant-menu-item,
+      .ant-menu-submenu-title,
+      .ant-menu-item-group-title {
+        padding-left: 24px !important;
+      }
+    }
+  }
+
+  // picker hover 颜色跟其他表单控件有偏差
+  .ant-calendar-picker:hover .ant-calendar-picker-input:not([disabled]) {
+    border-color: #2ebaee;
+  }
+  // picker 未选中时的颜色 和 边角弧度
+  .ant-calendar-date {
+    color: rgba(0, 0, 0, 0.55);
+    border-radius: 100%;
+  }
+
+  .ant-layout-root {
+    min-height: 100%;
+  }
+
+  .ant-layout-root-header {
+    height: 32px;
+    display: none;
+  }
+
+  .ant-layout-root-sider {
+    // margin-top: 32px;
+  }
+
+  .ant-layout-sider-content {
+    background-color: #f9f9f9;
+  }
+
+  .ant-layout-sider-tabs {
+    background-color: transparent;
+  }
+
+  .ant-layout-sider-footer {
+    // background-color: #f9f9f9;
+  }
+
+}

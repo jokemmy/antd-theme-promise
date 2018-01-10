@@ -1,0 +1,74 @@
+
+
+@tabs-prefix: ant-tabs;
+@tabs-page-tab-bar-shadow: 0 -1px 2px rgba(0, 0, 0, .08);
+@tabs-page-bar-shadow: 0 -1px 2px rgba(0, 0, 0, .08) inset;
+@tabs-page-tab-shadow: 0 0 3px rgba(0, 0, 0, .16);
+@tabs-page-tab-active-background: #f9f9f9;
+
+.@{tabs-prefix} {
+
+  :global(&-page) {
+    display: flex;
+    flex: auto;
+  }
+
+  :global(&-page &-bar) {
+    width: 100%;
+    position: absolute;
+    margin-bottom: 0px;
+    padding: 5px 5px 0 5px;
+    box-shadow: @tabs-page-bar-shadow;
+    background-color: rgba(0, 0, 0, .1);
+  }
+
+  :global(&-page &-content) {
+    margin-top: 40px;
+    background-color: @tabs-page-tab-active-background;
+  }
+
+  :global(&-page&-editable-card > &-bar &-tab > div) {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  :global(&&-page&-card > &-bar &-nav-container) {
+    height: 35px;
+  }
+
+  :global(&-page &-nav-animated) {
+    padding: 3px 3px 0 3px;
+  }
+
+  :global(&&-page &-bar &-tab:not(&-tab-active)) {
+    position: relative;
+    color: rgba(0, 0, 0, .5);
+    background-color: #efefef;
+    &:after {
+      left: 0;
+      bottom: -1px;
+      height: 1px;
+      width: 100%;
+      content: '';
+      position: absolute;
+      box-shadow: @tabs-page-tab-bar-shadow;
+    }
+  }
+
+  :global(&&-page &-bar &-tab-active) {
+    z-index: 1;
+    color: rgba(0, 0, 0, .85);
+    box-shadow: @tabs-page-tab-shadow;
+    background-color: @tabs-page-tab-active-background;
+  }
+
+  :global(&&-page &-content &-tabpane) {
+    padding: 16px;
+    background-color: @tabs-page-tab-active-background;
+  }
+
+  :global(&-page &-tab .anticon-close) {
+    width: 16px !important;
+  }
+}
+
